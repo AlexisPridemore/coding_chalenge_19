@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import TourCard from "./TourCard";
 
-const url = "https://course-api.com/react-tours-project";
+const url = "https://api.allorigins.win/raw?url=https://course-api.com/react-tours-project";
 
 // Gallery is responsible for fetching and rendering the tours
 const Gallery = ({ tours, setTours, onRemove }) => {
