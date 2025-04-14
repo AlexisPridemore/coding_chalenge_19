@@ -1,28 +1,28 @@
 import { useState } from "react";
 
 //TourCard renders individual details
-const TourCard ({ id, name, info, image, price, onRemove }) {
+const TourCard = ({ id, name, info, image, price, onRemove }) {
     const [readMore, setReadMore] = useState(false);
     return (
         <article className="tour-card">
-            <h3>{name}</h3>
-            <h5>{info}</h5>
+      <img src={image} alt={name} className="tour-image" />
+      <div className="tour-info">
+        <h3>{name}</h3>
+        <h4>${price}</h4>
+        <p>
+          {readMore ? info : `${info.substring(0, 80)}...`}
+           {/* Toggle button text*/}
+          <button onClick={() => setReadMore(!readMore)}>
+            {readMore ? "Show less" : "Read More"}
+          </button>
+        </p>
+         {/* Button to remove tour*/}
+        <button className="btn-remove" onClick={() => onRemove(id)}>
+          Not Interested
+        </button>
+      </div>
+    </article>
+  );
+};
 
-            <p>
-                {/* Show full desctition if readMore is true, other a slice*/}
-                {readMore ? descrition : `${descrition.substring(0, 80)}...`}
-                <button onClick={()=> setReadMore(!readMore)}>
-                    {/* Toggle button text*/}
-                    {readMore ? "Show less" : "Read More"}
-                </button>
-            </p>
-
-            {/* Button to remove tour*/}
-            <button className="btn-remove" onClicl={() => {
-                onRemove(id)
-            }}>Not Interested</button>
-        </article>
-    )
-}
-    export default TourCard;
-      
+export default TourCard;      
