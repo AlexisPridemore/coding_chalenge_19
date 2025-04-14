@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 //TourCard renders individual details
-const TourCard = ({ id, name, info, image, price, onRemove }) {
+const TourCard = ({ id, name, info, image, price, onRemove }) => {
     const [readMore, setReadMore] = useState(false);
     return (
         <article className="tour-card">
