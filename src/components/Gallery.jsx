@@ -35,7 +35,7 @@ const Gallery = ({ tours, setTours, onRemove }) => {
       useEffect(() => {
         fetchTours();
       }, []);
-    
+    //Display an error message if fetch fails
       if (loading) return <h2>Loading...</h2>;
       if (error) return <h2>There was an error loading the tours.</h2>;
     
